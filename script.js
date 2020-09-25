@@ -11,46 +11,52 @@ var specCase = "!@#$%^&*" .split("")
     console.log(numCase)
 
 
-var conLow = confirm("Would you like lower case letters in your password?")
-var conUpp = confirm("Would you like uppercase characters in your password?")
-var conNum = confirm("Would you like numbers in your password?")
-var conSpec = confirm("Would you like special characters in your password?")
-    console.log(conLow)
-    console.log(conUpp)
-    console.log(conNum)
-    console.log(conSpec)
 
-var pwCriteria = []
-var pwordArr = []
 
-while (conLow === false && conUpp === false && conNum === false && conSpec === false)
- {
-    alert("You must agree to at least one criteria!")
-    var conLow = confirm("Would you like lower case letters in your password?")
-    var conUpp = confirm("Would you like uppercase characters in your password?")
-    var conNum = confirm("Would you like numbers in your password?")
-    var conSpec = confirm("Would you like special characters in your password?")
-    console.log(conLow)
-    console.log(conUpp)
-    console.log(conNum)
-    console.log(conSpec)
 
-}
- 
-var pwLength = prompt("Pick a number between 8 and 128 for the character length of your password")
-console.log(pwLength)
-while (pwLength < 8 || pwLength > 128) {
-  alert("You must enter a value between 8 and 128!")
-  var pwLength = prompt("Pick a number between 8 and 128 for the character length of your password")
-console.log(pwLength)
-}
-
-alert("Press Generate Password Button")
 
 
 // // Write password to the #password input
 function writePassword() {
+
+  var conLow = confirm("Would you like lower case letters in your password?")
+  var conUpp = confirm("Would you like uppercase characters in your password?")
+  var conNum = confirm("Would you like numbers in your password?")
+  var conSpec = confirm("Would you like special characters in your password?")
+      console.log(conLow)
+      console.log(conUpp)
+      console.log(conNum)
+      console.log(conSpec)
+  
+  var pwCriteria = []
+  var pwordArr = []
+  
+  while (conLow === false && conUpp === false && conNum === false && conSpec === false)
+   {
+      alert("You must agree to at least one criteria!")
+      var conLow = confirm("Would you like lower case letters in your password?")
+      var conUpp = confirm("Would you like uppercase characters in your password?")
+      var conNum = confirm("Would you like numbers in your password?")
+      var conSpec = confirm("Would you like special characters in your password?")
+      console.log(conLow)
+      console.log(conUpp)
+      console.log(conNum)
+      console.log(conSpec)
+  
+  }
+   
+  var pwLength = prompt("Pick a number between 8 and 128 for the character length of your password")
+  console.log(pwLength)
+  while (pwLength < 8 || pwLength > 128) {
+    alert("You must enter a value between 8 and 128!")
+    var pwLength = prompt("Pick a number between 8 and 128 for the character length of your password")
+  console.log(pwLength)
+  }
+
   var password = generatePassword();
+  
+
+
   
   function generatePassword() {
     if (conLow === true) {
@@ -81,7 +87,9 @@ function writePassword() {
     
   }
     console.log(pwordArr)
-    var password = pwordArr.toString();
+    var passwordCommas = pwordArr.toString();
+    console.log(passwordCommas)
+    var password = passwordCommas.replace(/,/g, "");
     console.log(password)
 
     var passwordText = document.querySelector("#password");
